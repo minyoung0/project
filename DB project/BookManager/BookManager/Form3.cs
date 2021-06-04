@@ -33,9 +33,10 @@ public partial class Form3 : Form
             dataGridView1.DataSource = data.Tables[0];
             // 데이터 그리드 설정
             //dataGridView1.DataSource = DataManager.Users;
-           
+            label6.Text = Convert.ToString(data.Tables[0].Rows.Count);
 
-    }
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -55,6 +56,7 @@ public partial class Form3 : Form
             adt = new OracleDataAdapter(sql2, conn);
             adt.Fill(Data);
             dataGridView1.DataSource = Data.Tables[0];
+            label6.Text = Convert.ToString(Data.Tables[0].Rows.Count);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -91,6 +93,7 @@ public partial class Form3 : Form
             adt = new OracleDataAdapter(sql2, conn);
             adt.Fill(Data);
             dataGridView1.DataSource = Data.Tables[0];
+            label6.Text = Convert.ToString(Data.Tables[0].Rows.Count);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
