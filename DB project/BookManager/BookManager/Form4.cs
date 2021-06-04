@@ -21,6 +21,7 @@ namespace BookManager
         {
             if (textBox1.Text == "1234")
             {
+                this.Visible = false;
                 new Form1().ShowDialog();
             }
             else

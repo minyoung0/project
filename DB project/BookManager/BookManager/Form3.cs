@@ -13,7 +13,7 @@ namespace BookManager
 {
 public partial class Form3 : Form
 {
-        string connect_info = "DATA SOURCE = xe; User Id = BOOKMANAGER; password = 1234;";
+        string connect_info = "DATA SOURCE = xe; User Id = sqlDB; password = 1234;";
         OracleConnection conn;
         OracleCommand comm;
         OracleDataAdapter adt;
