@@ -1,0 +1,26 @@
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\bin\Debug\BookManager.exe.config
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\bin\Debug\BookManager.exe
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\bin\Debug\BookManager.pdb
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.csprojResolveAssemblyReference.cache
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.Form1.resources
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.Form2.resources
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.Form3.resources
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.Properties.Resources.resources
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.csproj.GenerateResource.Cache
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.exe
+c:\users\juvniattta\documents\visual studio 2015\Projects\BookManager\BookManager\obj\Debug\BookManager.pdb
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\bin\Debug\BookManager.exe.config
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\bin\Debug\BookManager.exe
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\bin\Debug\BookManager.pdb
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.csprojAssemblyReference.cache
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.Form1.resources
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.Form2.resources
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.Form3.resources
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.Properties.Resources.resources
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.csproj.GenerateResource.cache
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.csproj.CoreCompileInputs.cache
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.exe
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.pdb
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\bin\Debug\Oracle.DataAccess.dll
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.csproj.CopyComplete
+C:\Users\KB\Desktop\project\13장_me2\BookManager\BookManager\obj\Debug\BookManager.Form4.resources
