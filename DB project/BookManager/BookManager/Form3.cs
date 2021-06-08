@@ -18,6 +18,7 @@ public partial class Form3 : Form
         OracleCommand comm;
         OracleDataAdapter adt;
         DataSet Data = new DataSet();
+        String temp;
         public Form3()
     {
         InitializeComponent();
@@ -32,88 +33,77 @@ public partial class Form3 : Form
             dataGridView1.DataSource = data.Tables[0];
             // 데이터 그리드 설정
             //dataGridView1.DataSource = DataManager.Users;
-            dataGridView1.CurrentCellChanged += DataGridView1_CurrentCellChanged;
-            
-        // 버튼 설정
-        button1.Click += (sender, e) =>
-        {
-            // 추가 버튼
-            try
-            {
-                if (DataManager.Users.Exists((x) => x.Id == int.Parse(textBox1.Text)))
-                {
-                    MessageBox.Show("사용자 ID가 겹칩니다");
-                }
-                else
-                {
-                    User user = new User()
-                    {
-                        Id = int.Parse(textBox1.Text),
-                        Name = textBox2.Text
-                    };
-                    DataManager.Users.Add(user);
+            label6.Text = Convert.ToString(data.Tables[0].Rows.Count);
 
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = DataManager.Users;
-                    DataManager.Save();
-                }
-            }
-            catch (Exception exception)
-            {
-
-            }
-                
-        };
-
-        button2.Click += (sender, e) =>
-        {
-            // 수정 버튼
-            try
-            {
-                User user = DataManager.Users.Single((x) => x.Id == int.Parse(textBox1.Text));
-                user.Name = textBox2.Text;
-
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = DataManager.Users;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("존재하지 않는 사용자입니다");
-            }
-        };
-
-        button3.Click += (sender, e) =>
-        {
-            // 수정 버튼
-            try
-            {
-                User user = DataManager.Users.Single((x) => x.Id == int.Parse(textBox1.Text));
-                DataManager.Users.Remove(user);
-
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = DataManager.Users;
-                DataManager.Save();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("존재하지 않는 사용자입니다");
-            }
-        };
-    }
-
-    private void DataGridView1_CurrentCellChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            // 그리드의 셀이 선택되면 텍스트박스에 글자 지정
-            User user = dataGridView1.CurrentRow.DataBoundItem as User;
-            textBox1.Text = user.Id.ToString();
-            textBox2.Text = user.Name;
-        }
-        catch (Exception exception)
-        {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string cid = string.Format(textBox1.Text); // 아이디
+            string cname = string.Format(textBox2.Text); // 이름
+            string cbirth = string.Format(textBox3.Text); // 생년월일
+            string ctel = string.Format(textBox4.Text); // 전화번호
+            string caddress = string.Format(textBox5.Text); // 주소
+            DataSet Data = new DataSet();
+            string sql = "INSERT INTO CUSTOMER (CID,CNAME,CBIRTH,CTEL,CADDRESS) VALUES ('" + cid + "','" + cname + "','" + cbirth + "','" + ctel + "','" + caddress + "')";
+            string sql2 = "SELECT * FROM CUSTOMER";
+
+            conn = new OracleConnection(connect_info);
+            conn.Open();
+            comm = new OracleCommand(sql, conn);
+            comm.ExecuteNonQuery();
+            adt = new OracleDataAdapter(sql2, conn);
+            adt.Fill(Data);
+            dataGridView1.DataSource = Data.Tables[0];
+            label6.Text = Convert.ToString(Data.Tables[0].Rows.Count);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string cid = string.Format(textBox1.Text); // 아이디
+            string cname = string.Format(textBox2.Text); // 이름
+            string cbirth = string.Format(textBox3.Text); // 생년월일
+            string ctel = string.Format(textBox4.Text); // 전화번호
+            string caddress = string.Format(textBox5.Text); // 주소
+            DataSet Data = new DataSet();
+
+            string sql = "UPDATE CUSTOMER SET CID='" + cid + "', CNAME='" + cname + "', CBIRTH ='" + cbirth + "', CTEL='" + ctel + "', CADDRESS='" + caddress + "' WHERE CID='" + temp + "'";
+            string sql2 = "SELECT * FROM CUSTOMER";
+            conn = new OracleConnection(connect_info);
+            conn.Open();
+            comm = new OracleCommand(sql, conn);
+            comm.ExecuteNonQuery();
+            adt = new OracleDataAdapter(sql2, conn);
+            adt.Fill(Data);
+            dataGridView1.DataSource = Data.Tables[0];
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string cid = string.Format(textBox1.Text);
+            string sql = "DELETE FROM CUSTOMER WHERE CID='" + cid + "'";
+            string sql2 = "SELECT * FROM CUSTOMER";
+            DataSet Data = new DataSet();
+
+            conn = new OracleConnection(connect_info);
+            conn.Open();
+            comm = new OracleCommand(sql, conn);
+            comm.ExecuteNonQuery();
+            adt = new OracleDataAdapter(sql2, conn);
+            adt.Fill(Data);
+            dataGridView1.DataSource = Data.Tables[0];
+            label6.Text = Convert.ToString(Data.Tables[0].Rows.Count);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            temp = textBox1.Text;
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+        }
     }
-}
 }
